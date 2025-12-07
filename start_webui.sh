@@ -1,5 +1,7 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
+# Jalankan Web UI Flask/Waitress
+
 cd "$(dirname "$0")"
 
 # ---------- VALIDASI CEPAT ----------
@@ -19,8 +21,9 @@ done
 # Cek modul flask & waitress
 python - <<'EOF'
 try:
-    import flask, waitress  # type: ignore
-except Exception as e:
+    import flask  # type: ignore
+    import waitress  # type: ignore
+except Exception:
     raise SystemExit(1)
 EOF
 
